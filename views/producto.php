@@ -41,7 +41,7 @@
             <nav class="mb-1" style="font-size:.875rem; color:var(--gris);">
                 <a href="index.php">Inicio</a> /
                 <a href="index.php?accion=catalogo">Catálogo</a> /
-                <span>Catan</span>
+                <span><?=$producto->getNombre()?></span>
             </nav>
 
             <section class="ficha">
@@ -53,7 +53,7 @@
                     <h1 class="ficha-nombre"><?=$producto->getNombre()?></h1>
                     <span class="ficha-precio"><?=$producto->getPrecio()?> €</span>
 
-                    <p class="ficha-desc"> <?= $producto->getDescripcion() ?></p>
+                    <p class="ficha-desc"> <?=$producto->getDescripcion() ?></p>
 
                     <div class="specs">
                         <div class="spec">
