@@ -10,7 +10,7 @@
 
     <header class="cabecera">
         <div class="cabecera-cont">
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <div class="logo-img">BV</div>
                 <span class="logo-texto">BoardVerse</span>
             </a>
@@ -21,13 +21,14 @@
 
             <nav class="nav" id="navPrincipal">
                 <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="index.php?accion=catalogo">Catálogo</a></li>
                     <li><a href="catalogo.html?cat=estrategia">Estrategia</a></li>
                     <li><a href="catalogo.html?cat=familiar">Familiar</a></li>
+                    <li><a href="catalogo.html?cat=party">Party</a></li>
                 </ul>
                 <div class="acciones-cab">
-                    <a href="login.html" class="btn btn-borde btn-peq">Usuario</a>
+                    <a href="login.html" class="btn btn-borde btn-peq">Iniciar sesión</a>
                     <a href="carrito.html" class="btn btn-amarillo btn-peq">Carro (0)</a>
                 </div>
             </nav>
@@ -38,8 +39,8 @@
         <div class="container">
 
             <nav class="mb-1" style="font-size:.875rem; color:var(--gris);">
-                <a href="index.html">Inicio</a> /
-                <a href="catalogo.html">Catálogo</a> /
+                <a href="index.php">Inicio</a> /
+                <a href="index.php?accion=catalogo">Catálogo</a> /
                 <span>Catan</span>
             </nav>
 
@@ -49,28 +50,23 @@
                 </div>
 
                 <div class="ficha-info">
-                    <h1 class="ficha-nombre">Catan</h1>
-                    <span class="ficha-precio">39,95 €</span>
+                    <h1 class="ficha-nombre"><?=$producto->getNombre()?></h1>
+                    <span class="ficha-precio"><?=$producto->getPrecio()?> €</span>
 
-                    <p class="ficha-desc">
-                        El clásico juego de estrategia donde los jugadores compiten por colonizar
-                        la isla de Catan. Gestiona recursos, construye carreteras, poblados y
-                        ciudades, y comercia con los demás para convertirte en el colono más
-                        influyente. Una partida diferente cada vez gracias a su tablero modular.
-                    </p>
+                    <p class="ficha-desc"> <?= $producto->getDescripcion() ?></p>
 
                     <div class="specs">
                         <div class="spec">
                             <span class="spec-label">Jugadores</span>
-                            <span class="spec-valor">3-4</span>
+                            <span class="spec-valor"><?=$producto->getNumJugadoresMin(); ?>-<?=$producto->getNumJugadoresMax(); ?></span>
                         </div>
                         <div class="spec">
                             <span class="spec-label">Edad</span>
-                            <span class="spec-valor">10+</span>
+                            <span class="spec-valor"><?=$producto->getEdad(); ?>+</span>
                         </div>
                         <div class="spec">
                             <span class="spec-label">Duración</span>
-                            <span class="spec-valor">90 min</span>
+                            <span class="spec-valor"><?=$producto->getDuracion(); ?> min</span>
                         </div>
                         <div class="spec">
                             <span class="spec-label">Dificultad</span>
@@ -78,7 +74,7 @@
                         </div>
                         <div class="spec">
                             <span class="spec-label">Categoría</span>
-                            <span class="spec-valor">Estrategia</span>
+                            <span class="spec-valor"><?=$producto->getCategoria(); ?></span>
                         </div>
                     </div>
 

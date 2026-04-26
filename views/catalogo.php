@@ -22,7 +22,7 @@
             <nav class="nav" id="navPrincipal">
                 <ul class="menu">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                    <li><a href="index.php?accion=catalogo" class="activo">Catálogo</a></li>
                     <li><a href="catalogo.html?cat=estrategia">Estrategia</a></li>
                     <li><a href="catalogo.html?cat=familiar">Familiar</a></li>
                     <li><a href="catalogo.html?cat=party">Party</a></li>
@@ -106,15 +106,15 @@
             <section class="productos" id="gridProductos">
                 <?php foreach ($productos as $producto): ?>
                     <article class="producto">
-                        <a href="producto.php?id=<?php echo $producto->getId(); ?>" class="producto-img"><?php echo $producto->getNombre(); ?></a>
+                        <a href="index.php?accion=producto&id=<?=$producto->getId(); ?>" class="producto-img"><?=$producto->getNombre(); ?></a>
                         <div class="producto-info">
-                            <h3 class="producto-nombre"><?php echo $producto->getNombre(); ?></h3>
+                            <h3 class="producto-nombre"><?=$producto->getNombre(); ?></h3>
                             <div class="tags">
-                                <span class="tag"><?php echo $producto->getNumJugadoresMin(); ?>-<?php echo $producto->getNumJugadoresMax(); ?> jugadores</span>
-                                <span class="tag"><?php echo $producto->getDuracion(); ?> min</span>
-                                <span class="tag"><?php echo $producto->getEdad(); ?>+ años</span>
+                                <span class="tag"><?=$producto->getNumJugadoresMin(); ?>-<?=$producto->getNumJugadoresMax(); ?> jugadores</span>
+                                <span class="tag"><?=$producto->getDuracion(); ?> min</span>
+                                <span class="tag"><?=$producto->getEdad(); ?>+ años</span>
                             </div>
-                            <span class="producto-precio"><?php echo $producto->getPrecio(); ?> €</span>
+                            <span class="producto-precio"><?=$producto->getPrecio(); ?> €</span>
                         </div>
                     </article>
                 <?php endforeach; ?>

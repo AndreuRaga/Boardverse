@@ -11,6 +11,10 @@ switch ($accion) {
         //Aquí podrías cargar un controlador específico para el catálogo
         $controller->catalogo();
         break;
+    case 'producto':
+        //Aquí podrías cargar un controlador específico para el producto
+        $controller->producto();
+        break;
     case 'estrategia':
         //Aquí podrías cargar un controlador específico para la estrategia
         $controller->index();

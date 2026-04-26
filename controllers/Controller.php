@@ -12,6 +12,14 @@ class Controller {
 
     public function catalogo() {
         $productos = $this->gestor->obtenerProductos();
+        
         include 'views/catalogo.php';
+    }
+
+    public function producto() {
+        $id = $_GET['id'];
+        $producto = $this->gestor->buscarProducto($id);
+        
+        include 'views/producto.php';
     }
 }

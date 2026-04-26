@@ -51,4 +51,21 @@ class GestorPDO {
         }
         return $arrayProductos;
     }
+
+    public function buscarProducto($id) {
+        $sql = "SELECT * FROM productos WHERE id_producto = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+
+        $value = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        //Si encontró algo, creamos y devolvemos un objeto Producto
+        if ($value) {
+            $precioConComa = str_replace(".", ",", $value['precio']);
+            return new Producto($value['nombre'], $value['distribuidora'], $value['categoria'], $precioConComa, $value['precio_descuento'], $value['stock'], $value['descripcion'], $value['num_jugadores_min'], $value['num_jugadores_max'], $value['duracion'], $value['edad'], $value['id_producto']);
+        }
+        //Si no existe, devolvemos false o null
+        return false;
+    }
 }
