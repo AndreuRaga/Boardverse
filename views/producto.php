@@ -29,7 +29,7 @@
                 </ul>
                 <div class="acciones-cab">
                     <a href="login.html" class="btn btn-borde btn-peq">Iniciar sesión</a>
-                    <a href="carrito.html" class="btn btn-amarillo btn-peq">Carro (0)</a>
+                    <a href="carrito.html" class="btn btn-amarillo btn-peq">Carrito (0)</a>
                 </div>
             </nav>
         </div>
