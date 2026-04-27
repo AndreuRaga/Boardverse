@@ -70,7 +70,7 @@
                         </div>
                         <div class="spec">
                             <span class="spec-label">Dificultad</span>
-                            <span class="spec-valor">Media</span>
+                            <span class="spec-valor"><?=$producto->getDificultad(); ?></span>
                         </div>
                         <div class="spec">
                             <span class="spec-label">Categoría</span>

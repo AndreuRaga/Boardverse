@@ -12,8 +12,9 @@ class Producto {
     private $numJugadoresMax;
     private $duracion;
     private $edad;
+    private $dificultad;
 
-    public function __construct($nombre, $distribuidora, $categoria, $precio, $precioDescuento, $stock, $descripcion, $numJugadoresMin, $numJugadoresMax, $duracion, $edad, $id = null) {
+    public function __construct($nombre, $distribuidora, $categoria, $precio, $precioDescuento, $stock, $descripcion, $numJugadoresMin, $numJugadoresMax, $duracion, $edad, $dificultad, $id = null) {
         $this->nombre = $nombre;
         $this->distribuidora = $distribuidora;
         $this->categoria = $categoria;
@@ -25,6 +26,7 @@ class Producto {
         $this->numJugadoresMax = $numJugadoresMax;
         $this->duracion = $duracion;
         $this->edad = $edad;
+        $this->dificultad = $dificultad;
         $this->id = $id;
     }
 
@@ -119,5 +121,13 @@ class Producto {
 
     public function setEdad($edad) {
         $this->edad = $edad;
+    }
+
+    public function getDificultad() {
+        return $this->dificultad;
+    }
+
+    public function setDificultad($dificultad) {
+        $this->dificultad = $dificultad;
     }
 }

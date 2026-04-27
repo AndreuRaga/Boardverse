@@ -47,7 +47,7 @@ class GestorPDO {
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $precioConComa = str_replace(".", ",", $row['precio']);
-            $arrayProductos[] = new Producto($row['nombre'], $row['distribuidora'], $row['categoria'], $precioConComa, $row['precio_descuento'], $row['stock'], $row['descripcion'], $row['num_jugadores_min'], $row['num_jugadores_max'], $row['duracion'], $row['edad'], $row['id_producto']);
+            $arrayProductos[] = new Producto($row['nombre'], $row['distribuidora'], $row['categoria'], $precioConComa, $row['precio_descuento'], $row['stock'], $row['descripcion'], $row['num_jugadores_min'], $row['num_jugadores_max'], $row['duracion'], $row['edad'], $row['dificultad'], $row['id_producto']);
         }
         return $arrayProductos;
     }
@@ -63,7 +63,7 @@ class GestorPDO {
         //Si encontró algo, creamos y devolvemos un objeto Producto
         if ($value) {
             $precioConComa = str_replace(".", ",", $value['precio']);
-            return new Producto($value['nombre'], $value['distribuidora'], $value['categoria'], $precioConComa, $value['precio_descuento'], $value['stock'], $value['descripcion'], $value['num_jugadores_min'], $value['num_jugadores_max'], $value['duracion'], $value['edad'], $value['id_producto']);
+            return new Producto($value['nombre'], $value['distribuidora'], $value['categoria'], $precioConComa, $value['precio_descuento'], $value['stock'], $value['descripcion'], $value['num_jugadores_min'], $value['num_jugadores_max'], $value['duracion'], $value['edad'], $value['dificultad'], $value['id_producto']);
         }
         //Si no existe, devolvemos false o null
         return false;
